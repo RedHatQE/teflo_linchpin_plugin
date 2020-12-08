@@ -26,5 +26,5 @@
 
 from .lp_wrapper_plugin import LinchpinWrapperProvisionerPlugin
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 __author__ = 'Red Hat Inc.'
