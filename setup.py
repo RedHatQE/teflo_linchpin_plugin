@@ -23,7 +23,7 @@ setup(
     version=get_version(),
     license='GPLv3',
     description="Linchpin provisioner plugin for Teflo",
-    long_description="This is a provisioner plugin for Teflo to provision resources using Linchpin",
+    long_description="""# teflo_linchpin_plugin\n\n* A provisioner plugin for Teflo to provision resources using Linchpin\n""",
     long_description_content_type='text/markdown',
     author="Red Hat Inc",
     packages=find_packages(),
