@@ -1,0 +1,75 @@
+{
+  "teflo": {
+      "action": "up",
+      "cfgs": [],
+      "end": "1564163573.3",
+      "hooks": [],
+      "inputs": [
+        {
+          "topology_data": {
+            "resource_groups": [
+              {
+                "resource_definitions": [
+                  {
+                    "count": 1,
+                    "image_src": "http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2",
+                    "memory": 1024,
+                    "name": "test_libvirt_vm",
+                    "networks": [
+                      {
+                        "name": "test_libvirt_net"
+                      }
+                    ],
+                    "role": "libvirt_node",
+                    "ssh_key": "teflo",
+                    "uri": "qemu:///system",
+                    "vcpus": 2
+                  }
+                ],
+                "resource_group_name": "teflo",
+                "resource_group_type": "libvirt"
+              }
+            ],
+            "topology_name": "teflo"
+          }
+        },
+        {
+          "layout_data": {
+            "inventory_layout": {
+              "hosts": [
+                {
+                  "count": 1,
+                  "host_groups": [
+                    "hosts",
+                    "client"
+                  ],
+                  "name": "node"
+                }
+              ],
+              "vars": {
+                "ansible_ssh_private_key_file": "keys/teflo",
+                "ansible_user": "centos",
+                "hostname": "test_libvirt_vm"
+              }
+            }
+          }
+        }
+      ],
+      "outputs":
+        {
+          "resources": [
+            {
+              "ip": "10.0.58.5",
+              "name": "test_libvirt_vm_0",
+              "resource_type": "libvirt_res"
+            }
+          ],
+          "inventory_path": [
+            "/home/dbaez/projects/teflo/e2e-acceptance-tests/.teflo/.results/linchpin/inventories/teflo.inventory"
+          ]
+        },
+      "rc": 0,
+      "start": "1564163522.44",
+      "uhash": "278b94"
+  }
+}

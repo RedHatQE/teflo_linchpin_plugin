@@ -1,0 +1,9 @@
+include CHANGES LICENSE AUTHORS README.md
+recursive-include teflo_linchpin_plugin/files *
+exclude setup.cfg
+prune docs/
+prune tests/.cache
+prune extensions
+prune .ropeproject
+prune .git
+prune .gitignore

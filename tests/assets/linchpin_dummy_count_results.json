@@ -1,0 +1,139 @@
+{
+  "dummy-two-groups": {
+    "inputs": {
+      "layout_data": {
+        "inventory_layout": {
+          "hosts": [
+            {
+              "count": 1,
+              "name": "test-node",
+              "host_groups": [
+                "test"
+              ]
+            },
+            {
+              "count": 3,
+              "name": "example-node",
+              "host_groups": [
+                "example"
+              ]
+            }
+          ],
+          "vars": {
+            "hostname": "__IP__"
+          }
+        }
+      },
+      "topology_data": {
+        "topology_name": "dummy_cluster",
+        "resource_groups": [
+          {
+            "resource_group_name": "dummy",
+            "resource_definitions": [
+              {
+                "count": 3,
+                "role": "dummy_node",
+                "name": "web-two-groups"
+              }
+            ],
+            "resource_group_type": "dummy"
+          },
+          {
+            "resource_group_name": "dummy_2",
+            "resource_definitions": [
+              {
+                "count": 1,
+                "role": "dummy_node",
+                "name": "test-two-groups"
+              }
+            ],
+            "resource_group_type": "dummy"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/tmp/.results/inventory/master-p6f8xlz0b0"
+      ],
+      "resources": [
+        {
+          "resource_group": "dummy",
+          "changed": false,
+          "failed": false,
+          "role": "dummy_node",
+          "hosts": [
+            "web-two-groups-0",
+            "web-two-groups-1",
+            "web-two-groups-2"
+          ],
+          "dummy_file": "/tmp/dummy.hosts"
+        },
+        {
+          "resource_group": "dummy",
+          "changed": false,
+          "failed": false,
+          "role": "dummy_node",
+          "hosts": [
+            "test-two-groups"
+          ],
+          "dummy_file": "/tmp/dummy.hosts"
+        }
+      ]
+    }
+  },
+  "dummy-topo": {
+    "inputs": {
+      "topology_data": {
+        "topology_name": "dummy_cluster",
+        "resource_groups": [
+          {
+            "resource_group_name": "dummy",
+            "resource_definitions": [
+              {
+                "count": 3,
+                "role": "dummy_node",
+                "name": "web-topo"
+              },
+              {
+                "count": 1,
+                "role": "dummy_node",
+                "name": "test-topo"
+              }
+            ],
+            "resource_group_type": "dummy"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/tmp/.results/inventory/master-p6f8xlz0b0"
+      ],
+      "resources": [
+        {
+          "resource_group": "dummy",
+          "changed": false,
+          "failed": false,
+          "role": "dummy_node",
+          "hosts": [
+            "web-topo-0",
+            "web-topo-1",
+            "web-topo-2"
+          ],
+          "dummy_file": "/tmp/dummy.hosts"
+        },
+        {
+          "resource_group": "dummy",
+          "changed": false,
+          "failed": false,
+          "role": "dummy_node",
+          "hosts": [
+            "test-topo"
+          ],
+          "dummy_file": "/tmp/dummy.hosts"
+        }
+      ]
+    }
+  }
+}

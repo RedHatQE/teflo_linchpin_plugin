@@ -1,0 +1,64 @@
+---
+# default linchpin schema
+# This defines the parameters that are accepted by this teflo plugin for Linchpin
+
+type: map
+allowempty: True
+func: valid_combos
+mapping:
+  pinfile:
+    type: map
+    required: False
+    mapping:
+      path:
+        type: str
+        required: True
+      targets:
+        type: seq
+        required: False
+        sequence:
+          - type: str
+  cfgs:
+    type: map
+    required: False
+    allowempty: True
+    mapping:
+      regex;(.*):
+        required: False
+        type: any
+  topology:
+    type: str
+    required: False
+  layout:
+    type: any
+    required: False
+  hooks:
+    type: any
+    required: False
+  credentials:
+    type: any
+    required: False
+  resource_group_type:
+    type: str
+    required: False
+  resource_definitions:
+    type: seq
+    required: False
+    sequence:
+      - type: map
+        allowempty: True
+  template_data:
+    type: map
+    required: False
+    allowempty: True
+    mapping:
+      file:
+        type: str
+        required: False
+      vars:
+        type: map
+        required: False
+        mapping:
+          regex;(.*):
+            required: False
+            type: any

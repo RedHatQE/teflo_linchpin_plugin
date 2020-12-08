@@ -1,0 +1,358 @@
+{
+  "teflo": {
+    "inputs": {
+      "topology_data": {
+        "topology_name": "cbn-topo",
+        "resource_groups": [
+          {
+            "resource_group_name": "cbn-group",
+            "resource_definitions": [
+              {
+                "vm_name": "TestMultiVm",
+                "count": 2,
+                "role": "azure_vm",
+                "resource_group": "ccit",
+                "deepclean": true
+              }
+            ],
+            "resource_group_type": "azure"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/home/dbaez/projects/teflo/linchpin_scenarios/.teflo/.results/inventory/master-pktsq7hiz1"
+      ],
+      "resources": [
+        {
+          "powerstate": "running",
+          "name": "linchpin-mock-vm",
+          "resource_group": "azure",
+          "tags": {
+            "_own_nic_": "linchpin-mock-vm01",
+            "_own_nsg_": "linchpin-mock-vm01",
+            "_own_pip_": "linchpin-mock-vm01",
+            "_own_sa_": "linchpinmockvm2996"
+          },
+          "properties": {
+            "osProfile": {
+              "adminUsername": "linchpin",
+              "secrets": [],
+              "computerName": "linchpin-mock-vm",
+              "linuxConfiguration": {
+                "provisionVMAgent": true,
+                "disablePasswordAuthentication": false
+              },
+              "allowExtensionOperations": true
+            },
+            "instanceView": {
+              "disks": [
+                {
+                  "name": "linchpin-mock-vm.vhd",
+                  "statuses": [
+                    {
+                      "level": "Info",
+                      "code": "ProvisioningState/succeeded",
+                      "displayStatus": "Provisioning succeeded",
+                      "time": "2020-03-03T21:56:39.797631Z"
+                    }
+                  ]
+                }
+              ],
+              "vmAgent": {
+                "vmAgentVersion": "WALinuxAgent-2.0.16",
+                "extensionHandlers": [],
+                "statuses": [
+                  {
+                    "message": "GuestAgent is running and accepting new configurations.",
+                    "code": "ProvisioningState/succeeded",
+                    "displayStatus": "Ready",
+                    "level": "Info",
+                    "time": "2020-03-03T21:57:45.000Z"
+                  }
+                ]
+              },
+              "statuses": [
+                {
+                  "level": "Info",
+                  "code": "ProvisioningState/succeeded",
+                  "displayStatus": "Provisioning succeeded",
+                  "time": "2020-03-03T21:57:47.110138Z"
+                },
+                {
+                  "code": "PowerState/running",
+                  "displayStatus": "VM running",
+                  "level": "Info"
+                }
+              ]
+            },
+            "networkProfile": {
+              "networkInterfaces": [
+                {
+                  "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01",
+                  "properties": {
+                    "macAddress": "00-0D-3A-A6-05-72",
+                    "hostedWorkloads": [],
+                    "networkSecurityGroup": {
+                      "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkSecurityGroups/linchpin-mock-vm01"
+                    },
+                    "virtualMachine": {
+                      "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Compute/virtualMachines/linchpin-mock-vm"
+                    },
+                    "tapConfigurations": [],
+                    "primary": true,
+                    "dnsSettings": {
+                      "internalDomainNameSuffix": "5pw3cidvm31ubkatjswwhcufvg.gx.internal.cloudapp.net",
+                      "dnsServers": [],
+                      "appliedDnsServers": []
+                    },
+                    "resourceGuid": "ccddc347-fb69-425d-8a32-90ce1e84cee1",
+                    "provisioningState": "Succeeded",
+                    "enableIPForwarding": false,
+                    "ipConfigurations": [
+                      {
+                        "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01/ipConfigurations/default",
+                        "etag": "W/\"e95ebfc8-c5fc-44ea-8105-13386fc74394\"",
+                        "properties": {
+                          "subnet": {
+                            "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/virtualNetworks/linchpin-mock-vn/subnets/linchpin-mock-subnet"
+                          },
+                          "primary": true,
+                          "privateIPAddressVersion": "IPv4",
+                          "publicIPAddress": {
+                            "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/publicIPAddresses/linchpin-mock-vm01",
+                            "name": "linchpin-mock-vm01",
+                            "properties": {
+                              "publicIPAllocationMethod": "Static",
+                              "ipTags": [],
+                              "ipConfiguration": {
+                                "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01/ipConfigurations/default"
+                              },
+                              "publicIPAddressVersion": "IPv4",
+                              "resourceGuid": "0ebcde60-d229-44c6-86aa-60c0ab776f59",
+                              "ipAddress": "52.173.252.215",
+                              "idleTimeoutInMinutes": 4,
+                              "provisioningState": "Succeeded"
+                            }
+                          },
+                          "privateIPAllocationMethod": "Dynamic",
+                          "privateIPAddress": "10.1.1.5",
+                          "provisioningState": "Succeeded"
+                        },
+                        "name": "default"
+                      }
+                    ],
+                    "enableAcceleratedNetworking": false
+                  },
+                  "name": "linchpin-mock-vm01"
+                }
+              ]
+            },
+            "storageProfile": {
+              "imageReference": {
+                "sku": "7.1",
+                "publisher": "OpenLogic",
+                "version": "7.1.20160308",
+                "offer": "CentOS"
+              },
+              "osDisk": {
+                "name": "linchpin-mock-vm.vhd",
+                "diskSizeGB": 30,
+                "createOption": "FromImage",
+                "caching": "ReadOnly",
+                "vhd": {
+                  "uri": "https://linchpinmockvm2996.blob.core.windows.net/vhds/linchpin-mock-vm.vhd"
+                },
+                "osType": "Linux"
+              },
+              "dataDisks": []
+            },
+            "vmId": "d7560a55-dd56-4a15-b841-004f32b6bbb3",
+            "hardwareProfile": {
+              "vmSize": "Standard_DS1_v2"
+            },
+            "provisioningState": "Succeeded"
+          },
+          "role": "azure_vm",
+          "location": "centralus",
+          "type": "Microsoft.Compute/virtualMachines",
+          "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Compute/virtualMachines/linchpin-mock-vm"
+        },
+        {
+          "powerstate": "running",
+          "name": "linchpin-mock-vm",
+          "resource_group": "azure",
+          "tags": {
+            "_own_nic_": "linchpin-mock-vm01",
+            "_own_nsg_": "linchpin-mock-vm01",
+            "_own_pip_": "linchpin-mock-vm01",
+            "_own_sa_": "linchpinmockvm2996"
+          },
+          "properties": {
+            "osProfile": {
+              "adminUsername": "linchpin",
+              "secrets": [],
+              "computerName": "linchpin-mock-vm",
+              "linuxConfiguration": {
+                "provisionVMAgent": true,
+                "disablePasswordAuthentication": false
+              },
+              "allowExtensionOperations": true
+            },
+            "instanceView": {
+              "disks": [
+                {
+                  "name": "linchpin-mock-vm.vhd",
+                  "statuses": [
+                    {
+                      "level": "Info",
+                      "code": "ProvisioningState/succeeded",
+                      "displayStatus": "Provisioning succeeded",
+                      "time": "2020-03-03T21:56:39.797631Z"
+                    }
+                  ]
+                }
+              ],
+              "vmAgent": {
+                "vmAgentVersion": "WALinuxAgent-2.0.16",
+                "extensionHandlers": [],
+                "statuses": [
+                  {
+                    "message": "GuestAgent is running and accepting new configurations.",
+                    "code": "ProvisioningState/succeeded",
+                    "displayStatus": "Ready",
+                    "level": "Info",
+                    "time": "2020-03-03T21:57:45.000Z"
+                  }
+                ]
+              },
+              "statuses": [
+                {
+                  "level": "Info",
+                  "code": "ProvisioningState/succeeded",
+                  "displayStatus": "Provisioning succeeded",
+                  "time": "2020-03-03T21:57:47.110138Z"
+                },
+                {
+                  "code": "PowerState/running",
+                  "displayStatus": "VM running",
+                  "level": "Info"
+                }
+              ]
+            },
+            "networkProfile": {
+              "networkInterfaces": [
+                {
+                  "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01",
+                  "properties": {
+                    "macAddress": "00-0D-3A-A6-05-72",
+                    "hostedWorkloads": [],
+                    "networkSecurityGroup": {
+                      "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkSecurityGroups/linchpin-mock-vm01"
+                    },
+                    "virtualMachine": {
+                      "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Compute/virtualMachines/linchpin-mock-vm"
+                    },
+                    "tapConfigurations": [],
+                    "primary": true,
+                    "dnsSettings": {
+                      "internalDomainNameSuffix": "5pw3cidvm31ubkatjswwhcufvg.gx.internal.cloudapp.net",
+                      "dnsServers": [],
+                      "appliedDnsServers": []
+                    },
+                    "resourceGuid": "ccddc347-fb69-425d-8a32-90ce1e84cee1",
+                    "provisioningState": "Succeeded",
+                    "enableIPForwarding": false,
+                    "ipConfigurations": [
+                      {
+                        "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01/ipConfigurations/default",
+                        "etag": "W/\"e95ebfc8-c5fc-44ea-8105-13386fc74394\"",
+                        "properties": {
+                          "subnet": {
+                            "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/virtualNetworks/linchpin-mock-vn/subnets/linchpin-mock-subnet"
+                          },
+                          "primary": true,
+                          "privateIPAddressVersion": "IPv4",
+                          "publicIPAddress": {
+                            "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/publicIPAddresses/linchpin-mock-vm01",
+                            "name": "linchpin-mock-vm01",
+                            "properties": {
+                              "publicIPAllocationMethod": "Static",
+                              "ipTags": [],
+                              "ipConfiguration": {
+                                "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/networkInterfaces/linchpin-mock-vm01/ipConfigurations/default"
+                              },
+                              "publicIPAddressVersion": "IPv4",
+                              "resourceGuid": "0ebcde60-d229-44c6-86aa-60c0ab776f59",
+                              "ipAddress": "52.173.252.215",
+                              "idleTimeoutInMinutes": 4,
+                              "provisioningState": "Succeeded"
+                            }
+                          },
+                          "privateIPAllocationMethod": "Dynamic",
+                          "privateIPAddress": "10.1.1.5",
+                          "provisioningState": "Succeeded"
+                        },
+                        "name": "default"
+                      }
+                    ],
+                    "enableAcceleratedNetworking": false
+                  },
+                  "name": "linchpin-mock-vm01"
+                }
+              ]
+            },
+            "storageProfile": {
+              "imageReference": {
+                "sku": "7.1",
+                "publisher": "OpenLogic",
+                "version": "7.1.20160308",
+                "offer": "CentOS"
+              },
+              "osDisk": {
+                "name": "linchpin-mock-vm.vhd",
+                "diskSizeGB": 30,
+                "createOption": "FromImage",
+                "caching": "ReadOnly",
+                "vhd": {
+                  "uri": "https://linchpinmockvm2996.blob.core.windows.net/vhds/linchpin-mock-vm.vhd"
+                },
+                "osType": "Linux"
+              },
+              "dataDisks": []
+            },
+            "vmId": "d7560a55-dd56-4a15-b841-004f32b6bbb3",
+            "hardwareProfile": {
+              "vmSize": "Standard_DS1_v2"
+            },
+            "provisioningState": "Succeeded"
+          },
+          "role": "azure_vm",
+          "location": "centralus",
+          "type": "Microsoft.Compute/virtualMachines",
+          "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Compute/virtualMachines/linchpin-mock-vm"
+        },
+        {
+          "resource_group": "azure",
+          "changed": true,
+          "check_mode": false,
+          "failed": false,
+          "state": {
+            "name": "linchpin-mock-vn",
+            "tags": null,
+            "provisioning_state": "Succeeded",
+            "etag": "W/\"4ebcc42b-e2ef-4d35-bb5e-23d4ad9f8813\"",
+            "location": "centralus",
+            "type": "Microsoft.Network/virtualNetworks",
+            "id": "/subscriptions/dcc74c29-4db6-4c49-9a0f-ac0ee03fa17e/resourceGroups/linchpin-mock-resgrp/providers/Microsoft.Network/virtualNetworks/linchpin-mock-vn",
+            "address_prefixes": [
+              "10.1.0.0/16"
+            ]
+          },
+          "role": "azure_virtual_network"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "teflo": {
+    "inputs": {
+      "topology_data": {
+        "topology_name": "cbn-topo",
+        "resource_groups": [
+          {
+            "resource_group_name": "cbn-group",
+            "resource_definitions": [
+              {
+                "vm_name": "TestMultiVm",
+                "count": 2,
+                "role": "azure_vm",
+                "resource_group": "ccit",
+                "deepclean": true
+              }
+            ],
+            "resource_group_type": "azure"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/home/dbaez/projects/teflo/linchpin_scenarios/.teflo/.results/inventory/master-pktsq7hiz1"
+      ],
+      "resources": [
+        {
+          "role": "openshift_inline",
+          "resource_group": "openshift",
+          "test1": {
+            "metadata": {
+            "annotations": {
+              "kubernetes.io/limit-ranger": "LimitRanger plugin set: cpu, memory request for container test2; cpu, memory limit for container test2",
+              "openshift.io/scc": "restricted"
+            },
+            "creationTimestamp": "2018-12-24T13:45:12Z",
+            "labels": {
+              "name": "test1-pod"
+            },
+            "name": "test1",
+            "namespace": "cci-linchpin-docs",
+            "resourceVersion": "242748767",
+            "selfLink": "/api/v1/namespaces/cci-linchpin-docs/pods/test1",
+            "uid": "22b014b3-0782-11e9-adcd-fa163e4a655d"
+          },
+            "spec": {
+              "kind": "Pod",
+              "containers": [{
+                "image": "bitnami/nginx",
+                "imagePullPolicy": "Always",
+                "name": "test2",
+                "ports": [{
+                  "containerPort": 8080,
+                  "protocol": "TCP"
+                }],
+                "resources": {
+                  "limits": {
+                    "cpu": "500m",
+                    "memory": "1000Mi"
+                  },
+                  "requests": {
+                    "cpu": "300m",
+                    "memory": "400Mi"
+                  }
+                },
+                "securityContext": {
+                  "capabilities": {
+                    "drop": [
+                      "KILL",
+                      "MKNOD",
+                      "SETGID",
+                      "SETUID"
+                    ]
+                  },
+                  "runAsUser": 1002990000
+                },
+                "terminationMessagePath": "/dev/termination-log",
+                "terminationMessagePolicy": "File",
+                "volumeMounts": [{
+                  "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                  "name": "default-token-gbjrh",
+                  "readOnly": true
+                }]
+              }],
+              "dnsPolicy": "ClusterFirst",
+              "imagePullSecrets": [{
+                "name": "default-dockercfg-2n896"
+              }],
+              "nodeName": "cpt-0006.paas.prod.upshift.rdu2.redhat.com",
+              "nodeSelector": {
+                "region": "compute"
+              },
+              "restartPolicy": "Always",
+              "schedulerName": "default-scheduler",
+              "securityContext": {
+                "fsGroup": 1002990000,
+                "seLinuxOptions": {
+                  "level": "s0:c55,c10"
+                }
+              },
+              "serviceAccount": "default",
+              "serviceAccountName": "default",
+              "terminationGracePeriodSeconds": 30,
+              "tolerations": [{
+                "effect": "NoSchedule",
+                "key": "node.kubernetes.io/memory-pressure",
+                "operator": "Exists"
+              }],
+              "volumes": [{
+                "name": "default-token-gbjrh",
+                "secret": {
+                  "defaultMode": 420,
+                  "secretName": "default-token-gbjrh"
+                }
+              }]
+            },
+            "status": {
+              "conditions": [{
+                "lastProbeTime": null,
+                "lastTransitionTime": "2018-12-24T13:45:12Z",
+                "status": "True",
+                "type": "Initialized"
+              },
+                {
+                  "lastProbeTime": null,
+                  "lastTransitionTime": "2018-12-24T13:45:23Z",
+                  "status": "True",
+                  "type": "Ready"
+                },
+                {
+                  "lastProbeTime": null,
+                  "lastTransitionTime": "2018-12-24T13:45:12Z",
+                  "status": "True",
+                  "type": "PodScheduled"
+                }
+              ],
+              "containerStatuses": [{
+                "containerID": "docker://b478148e9460141ea811f7ecda74846179ea7d25e723d50cf01788abb2463e23",
+                "image": "docker.io/bitnami/nginx:latest",
+                "imageID": "docker-pullable://docker.io/bitnami/nginx@sha256:7e5ccf043e08dd5f1d254fdd353103158be8fabc4a2967012d18b2f3841daed2",
+                "lastState": {
+
+                },
+                "name": "test2",
+                "ready": true,
+                "restartCount": 0,
+                "state": {
+                  "running": {
+                    "startedAt": "2018-12-24T13:45:21Z"
+                  }
+                }
+              }],
+              "hostIP": "10.0.18.69",
+              "phase": "Running",
+              "podIP": "172.54.251.203",
+              "qosClass": "Burstable",
+              "startTime": "2018-12-24T13:45:12Z"
+            }}
+        }
+      ]
+    }
+  }
+}

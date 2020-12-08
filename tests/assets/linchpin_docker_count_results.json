@@ -1,0 +1,338 @@
+{
+  "teflo": {
+    "inputs": {
+      "topology_data": {
+        "topology_name": "cbn-topo",
+        "resource_groups": [
+          {
+            "resource_group_name": "cbn-group",
+            "resource_definitions": [
+              {
+                "role": "docker_image",
+                "tag": "python",
+                "dockerfile": "fedora29",
+                "name": "custom_fedora29",
+                "path": "docker/dockerfiles"
+              },
+              {
+                "role": "docker_container",
+                "image": "custom_fedora29:python",
+                "command": "sleep infinity",
+                "name": "myfedora29",
+                "devices": [
+                  "/dev/kvm:/dev/kvm"
+                ]
+              }
+            ],
+            "resource_group_type": "docker"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/home/dbaez/projects/teflo/linchpin_scenarios/.teflo/.results/inventory/master-s6pk7escx1"
+      ],
+      "resources": [
+        {
+          "resource_group": "docker",
+          "Mounts": [],
+          "State": {
+            "Status": "running",
+            "Pid": 32203,
+            "OOMKilled": false,
+            "Dead": false,
+            "Paused": false,
+            "Running": true,
+            "FinishedAt": "0001-01-01T00:00:00Z",
+            "Restarting": false,
+            "Error": "",
+            "StartedAt": "2020-03-20T23:41:21.434722221Z",
+            "ExitCode": 0
+          },
+          "Config": {
+            "Tty": false,
+            "Hostname": "651aef712eeb",
+            "Volumes": null,
+            "Domainname": "",
+            "StdinOnce": false,
+            "Image": "custom_fedora29:python",
+            "Cmd": [
+              "sleep",
+              "infinity"
+            ],
+            "WorkingDir": "",
+            "Labels": {
+              "maintainer": "Clement Verna <cverna@fedoraproject.org>"
+            },
+            "AttachStdin": false,
+            "User": "",
+            "Env": [
+              "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "DISTTAG=fcontainer",
+              "FGC=f",
+              "FBR=f"
+            ],
+            "Entrypoint": null,
+            "OnBuild": null,
+            "AttachStderr": false,
+            "AttachStdout": false,
+            "OpenStdin": false
+          },
+          "ResolvConfPath": "/var/lib/docker/containers/651aef712eebf94d50506b452839170a2940020686cb070f91338c29397dce53/resolv.conf",
+          "HostsPath": "/var/lib/docker/containers/651aef712eebf94d50506b452839170a2940020686cb070f91338c29397dce53/hosts",
+          "Args": [
+            "infinity"
+          ],
+          "Driver": "overlay2",
+          "resource_definition": {
+            "command": "sleep infinity",
+            "image": "custom_fedora29:python",
+            "role": "docker_container",
+            "name": "myfedora29",
+            "devices": [
+              "/dev/kvm:/dev/kvm"
+            ]
+          },
+          "role": "docker_container",
+          "Path": "sleep",
+          "HostnamePath": "/var/lib/docker/containers/651aef712eebf94d50506b452839170a2940020686cb070f91338c29397dce53/hostname",
+          "RestartCount": 0,
+          "Name": "/myfedora29",
+          "Created": "2020-03-20T23:41:18.913292468Z",
+          "GraphDriver": {
+            "Data": {
+              "MergedDir": "/var/lib/docker/overlay2/f639c0bff16c63dbfd39a09ea1252d9d6d4d78e3d86f1c9da57087662ecda602/merged",
+              "WorkDir": "/var/lib/docker/overlay2/f639c0bff16c63dbfd39a09ea1252d9d6d4d78e3d86f1c9da57087662ecda602/work",
+              "LowerDir": "/var/lib/docker/overlay2/f639c0bff16c63dbfd39a09ea1252d9d6d4d78e3d86f1c9da57087662ecda602-init/diff:/var/lib/docker/overlay2/dc5d7fb78432341e29a7fa73ef4fe5e183ce37ba96b217520ec7e13f0f3f77f5/diff:/var/lib/docker/overlay2/4ed760ed4267ab96cccff986db6cf5fa7bbab57b04167afa55535bf9e46d4351/diff",
+              "UpperDir": "/var/lib/docker/overlay2/f639c0bff16c63dbfd39a09ea1252d9d6d4d78e3d86f1c9da57087662ecda602/diff"
+            },
+            "Name": "overlay2"
+          },
+          "ExecIDs": null,
+          "ProcessLabel": "system_u:system_r:container_t:s0:c44,c680",
+          "NetworkSettings": {
+            "SecondaryIPv6Addresses": null,
+            "Networks": {
+              "bridge": {
+                "NetworkID": "1f9912db05fd1d7216a6279a4029274e151df802c528007102ff89a64869154b",
+                "MacAddress": "02:42:ac:11:00:02",
+                "GlobalIPv6PrefixLen": 0,
+                "Links": null,
+                "GlobalIPv6Address": "",
+                "IPAddress": "172.17.0.2",
+                "IPPrefixLen": 16,
+                "EndpointID": "d6feba60208d78c0b500bb4d758ae33b6a3d57c88663cb3d446efc066f936f25",
+                "Aliases": null,
+                "IPv6Gateway": "",
+                "Gateway": "172.17.0.1",
+                "IPAMConfig": null
+              }
+            },
+            "GlobalIPv6PrefixLen": 0,
+            "LinkLocalIPv6Address": "",
+            "Bridge": "",
+            "IPAddress": "172.17.0.2",
+            "SecondaryIPAddresses": null,
+            "IPPrefixLen": 16,
+            "GlobalIPv6Address": "",
+            "HairpinMode": false,
+            "LinkLocalIPv6PrefixLen": 0,
+            "EndpointID": "d6feba60208d78c0b500bb4d758ae33b6a3d57c88663cb3d446efc066f936f25",
+            "SandboxKey": "/var/run/docker/netns/f6867efdafd2",
+            "MacAddress": "02:42:ac:11:00:02",
+            "SandboxID": "f6867efdafd2b39909e454f1171499821a1190c90c708640dbe8e0c973819847",
+            "IPv6Gateway": "",
+            "Gateway": "172.17.0.1",
+            "Ports": {}
+          },
+          "AppArmorProfile": "",
+          "Image": "sha256:fd4405c2ce5957e0611e7eb2fa3c8fa7c04cde6d080a985737ccd856d75d9c67",
+          "LogPath": "",
+          "HostConfig": {
+            "CpuPeriod": 0,
+            "MemorySwappiness": -1,
+            "AutoRemove": false,
+            "KernelMemory": 0,
+            "BlkioDeviceReadIOps": null,
+            "CpuQuota": 0,
+            "UsernsMode": "",
+            "Init": false,
+            "ConsoleSize": [
+              0,
+              0
+            ],
+            "Dns": null,
+            "ExtraHosts": null,
+            "PidsLimit": 0,
+            "CgroupParent": "",
+            "Privileged": false,
+            "IOMaximumIOps": 0,
+            "NanoCpus": 0,
+            "CpusetCpus": "",
+            "DiskQuota": 0,
+            "DnsSearch": null,
+            "BlkioWeight": 0,
+            "ContainerIDFile": "",
+            "RestartPolicy": {
+              "MaximumRetryCount": 0,
+              "Name": ""
+            },
+            "PublishAllPorts": false,
+            "BlkioDeviceReadBps": null,
+            "VolumeDriver": "",
+            "ReadonlyRootfs": false,
+            "CpuShares": 0,
+            "OomScoreAdj": 0,
+            "MemoryReservation": 0,
+            "BlkioWeightDevice": null,
+            "CpuPercent": 0,
+            "NetworkMode": "default",
+            "BlkioDeviceWriteBps": null,
+            "Isolation": "",
+            "GroupAdd": null,
+            "CpuRealtimeRuntime": 0,
+            "Devices": [
+              {
+                "PathInContainer": "/dev/kvm",
+                "PathOnHost": "/dev/kvm",
+                "CgroupPermissions": "rwm"
+              }
+            ],
+            "BlkioDeviceWriteIOps": null,
+            "VolumesFrom": null,
+            "Binds": [],
+            "CpusetMems": "",
+            "Cgroup": "",
+            "UTSMode": "",
+            "PidMode": "",
+            "Runtime": "oci",
+            "Ulimits": null,
+            "CapDrop": null,
+            "DnsOptions": null,
+            "ShmSize": 67108864,
+            "Links": null,
+            "CpuRealtimePeriod": 0,
+            "IpcMode": "",
+            "PortBindings": null,
+            "SecurityOpt": null,
+            "CapAdd": null,
+            "CpuCount": 0,
+            "Memory": 0,
+            "MemorySwap": 0,
+            "OomKillDisable": false,
+            "LogConfig": {
+              "Config": {},
+              "Type": "journald"
+            },
+            "IOMaximumBandwidth": 0
+          },
+          "Id": "651aef712eebf94d50506b452839170a2940020686cb070f91338c29397dce53",
+          "MountLabel": "system_u:object_r:container_file_t:s0:c44,c680"
+        },
+        {
+          "Comment": "",
+          "Container": "47d4d066a1b91623d7caeaccd2df603885b5679fae3ecd66848c5ddf1c35a430",
+          "DockerVersion": "1.13.1",
+          "Parent": "sha256:d09302f77cfcc3e867829d80ff47f9e7738ffef69730d54ec44341a9fb1d359b",
+          "Created": "2020-03-20T23:41:18.040498377Z",
+          "Config": {
+            "Tty": false,
+            "Hostname": "47d4d066a1b9",
+            "Volumes": null,
+            "Domainname": "",
+            "StdinOnce": false,
+            "Image": "sha256:d09302f77cfcc3e867829d80ff47f9e7738ffef69730d54ec44341a9fb1d359b",
+            "Cmd": [
+              "/bin/bash"
+            ],
+            "WorkingDir": "",
+            "ArgsEscaped": true,
+            "Labels": {
+              "maintainer": "Clement Verna <cverna@fedoraproject.org>"
+            },
+            "AttachStdin": false,
+            "User": "",
+            "Env": [
+              "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "DISTTAG=fcontainer",
+              "FGC=f",
+              "FBR=f"
+            ],
+            "Entrypoint": null,
+            "OnBuild": [],
+            "AttachStderr": false,
+            "AttachStdout": false,
+            "OpenStdin": false
+          },
+          "Os": "linux",
+          "resource_group": "docker",
+          "Author": "",
+          "GraphDriver": {
+            "Data": {
+              "MergedDir": "/var/lib/docker/overlay2/dc5d7fb78432341e29a7fa73ef4fe5e183ce37ba96b217520ec7e13f0f3f77f5/merged",
+              "WorkDir": "/var/lib/docker/overlay2/dc5d7fb78432341e29a7fa73ef4fe5e183ce37ba96b217520ec7e13f0f3f77f5/work",
+              "LowerDir": "/var/lib/docker/overlay2/4ed760ed4267ab96cccff986db6cf5fa7bbab57b04167afa55535bf9e46d4351/diff",
+              "UpperDir": "/var/lib/docker/overlay2/dc5d7fb78432341e29a7fa73ef4fe5e183ce37ba96b217520ec7e13f0f3f77f5/diff"
+            },
+            "Name": "overlay2"
+          },
+          "resource_definition": {
+            "role": "docker_image",
+            "tag": "python",
+            "dockerfile": "fedora29",
+            "name": "custom_fedora29",
+            "path": "docker/dockerfiles"
+          },
+          "RepoTags": [
+            "custom_fedora29:python"
+          ],
+          "VirtualSize": 555655962,
+          "Architecture": "amd64",
+          "ContainerConfig": {
+            "Tty": false,
+            "Hostname": "47d4d066a1b9",
+            "Volumes": null,
+            "Domainname": "",
+            "StdinOnce": false,
+            "Image": "sha256:d09302f77cfcc3e867829d80ff47f9e7738ffef69730d54ec44341a9fb1d359b",
+            "Cmd": [
+              "/bin/sh",
+              "-c",
+              "dnf install -y python-devel"
+            ],
+            "WorkingDir": "",
+            "ArgsEscaped": true,
+            "Labels": {
+              "maintainer": "Clement Verna <cverna@fedoraproject.org>"
+            },
+            "AttachStdin": false,
+            "User": "",
+            "Env": [
+              "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "DISTTAG=fcontainer",
+              "FGC=f",
+              "FBR=f"
+            ],
+            "Entrypoint": null,
+            "OnBuild": [],
+            "AttachStderr": false,
+            "AttachStdout": false,
+            "OpenStdin": false
+          },
+          "role": "docker_image",
+          "RootFS": {
+            "Layers": [
+              "sha256:b7ba3be6a0d6426356fc49f538f0f929ed00e51a0a90906e354a345d46e23a8b",
+              "sha256:01c397de524bc9fafd65d3b3d5ccc80bac067e4c6988a59bb9d61ff4d61a3d3e"
+            ],
+            "Type": "layers"
+          },
+          "RepoDigests": [],
+          "Id": "sha256:fd4405c2ce5957e0611e7eb2fa3c8fa7c04cde6d080a985737ccd856d75d9c67",
+          "Size": 555655962
+        }
+      ]
+    }
+  }
+}

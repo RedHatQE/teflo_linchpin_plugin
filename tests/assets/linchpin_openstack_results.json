@@ -1,0 +1,493 @@
+{
+  "teflo": {
+    "inputs": {
+      "layout_data": {
+        "inventory_layout": {
+          "hosts": [{
+            "count": 1,
+            "host_groups": ["teflo"],
+            "name": "node"
+          }],
+          "vars": {
+            "ansible_user": "cloud-user",
+            "hostname": "__IP__"
+          }
+        }
+      },
+      "topology_data": {
+        "resource_groups": [{
+          "resource_definitions": [{
+            "count": 1,
+            "flavor": "m1.small",
+            "image": "rhel-7.5-server-x86_64-released",
+            "keypair": "ccit",
+            "name": "openstack-node",
+            "networks": ["provider_net_ccit"],
+            "role": "os_server",
+            "verify": "false"
+          }],
+          "resource_group_name": "teflo",
+          "resource_group_type": "openstack"
+        }],
+        "topology_name": "teflo"
+      }
+    },
+    "outputs": {
+      "inventory_path": ["/tmp/os_test/.teflo/.results/linchpin/inventories/teflo.inventory"],
+      "resources": [{
+        "resource_type": "os_server_res",
+        "ids": ["06d2cfed-5ca3-4ac9-9926-5f32bdbb34c7"],
+        "openstack": [{
+          "OS-DCF:diskConfig": "MANUAL",
+          "OS-EXT-AZ:availability_zone": "nova",
+          "OS-EXT-STS:power_state": 1,
+          "OS-EXT-STS:task_state": null,
+          "OS-EXT-STS:vm_state": "active",
+          "OS-SRV-USG:launched_at": "2018-12-18T08:28:54.000000",
+          "OS-SRV-USG:terminated_at": null,
+          "accessIPv4": "10.0.58.5",
+          "accessIPv6": "",
+          "addresses": {
+            "provider_net_ccit": [{
+              "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7c:9f:17",
+              "OS-EXT-IPS:type": "fixed",
+              "addr": "10.0.58.5",
+              "version": 4
+            }]
+          },
+          "adminPass": "RrsALqRg6yoY",
+          "az": "nova",
+          "cloud": "envvars",
+          "config_drive": "",
+          "created": "2018-12-18T08:28:34Z",
+          "created_at": "2018-12-18T08:28:34Z",
+          "disk_config": "MANUAL",
+          "flavor": {
+            "id": "BC7DCC3C-D728-455F-BF2B-5D61AB8E9A06",
+            "name": "m1.small"
+          },
+          "has_config_drive": false,
+          "hostId": "22763e86128f44a80b9dd80f5d6129b1c791332df7d965db3fd0e2b4",
+          "host_id": "22763e86128f44a80b9dd80f5d6129b1c791332df7d965db3fd0e2b4",
+          "id": "06d2cfed-5ca3-4ac9-9926-5f32bdbb34c7",
+          "image": {
+            "id": "d7b7b9b8-751b-4b28-9bc7-3436db1fd3a8",
+            "name": "rhel-7.5-server-x86_64-released"
+          },
+          "interface_ip": "10.0.58.5",
+          "key_name": "ccit",
+          "launched_at": "2018-12-18T08:28:54.000000",
+          "location": {
+            "cloud": "envvars",
+            "project": {
+              "domain_id": null,
+              "domain_name": null,
+              "id": "9b030642734c43b69cc85983164b3e2f",
+              "name": "CCIT"
+            },
+            "region_name": "",
+            "zone": "nova"
+          },
+          "metadata": {},
+          "name": "openstack-node1",
+          "networks": {},
+          "os-extended-volumes:volumes_attached": [],
+          "power_state": 1,
+          "private_v4": "",
+          "progress": 0,
+          "project_id": "9b030642734c43b69cc85983164b3e2f",
+          "properties": {
+            "OS-DCF:diskConfig": "MANUAL",
+            "OS-EXT-AZ:availability_zone": "nova",
+            "OS-EXT-STS:power_state": 1,
+            "OS-EXT-STS:task_state": null,
+            "OS-EXT-STS:vm_state": "active",
+            "OS-SRV-USG:launched_at": "2018-12-18T08:28:54.000000",
+            "OS-SRV-USG:terminated_at": null,
+            "os-extended-volumes:volumes_attached": []
+          },
+          "public_v4": "10.0.58.5",
+          "public_v6": "",
+          "region": "",
+          "security_groups": [{
+            "description": "Default security group",
+            "id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+            "location": {
+              "cloud": "envvars",
+              "project": {
+                "domain_id": null,
+                "domain_name": null,
+                "id": "9b030642734c43b69cc85983164b3e2f",
+                "name": "CCIT"
+              },
+              "region_name": "",
+              "zone": null
+            },
+            "name": "default",
+            "project_id": "9b030642734c43b69cc85983164b3e2f",
+            "properties": {},
+            "security_group_rules": [{
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {},
+                "id": "24c2d4c3-2d09-4517-8175-d8c6130f62c7",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": 22,
+                "port_range_min": 22,
+                "project_id": "",
+                "properties": {
+                  "group": {}
+                },
+                "protocol": "tcp",
+                "remote_group_id": null,
+                "remote_ip_prefix": "0.0.0.0/0",
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {
+                  "name": "default",
+                  "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                },
+                "id": "368b13fd-9879-4226-9dcd-6339d59cd90d",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {
+                    "name": "default",
+                    "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                  }
+                },
+                "protocol": null,
+                "remote_group_id": null,
+                "remote_ip_prefix": null,
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {
+                  "name": "default",
+                  "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                },
+                "id": "96a96ca0-eed9-4548-a2b4-25bc61d589db",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {
+                    "name": "default",
+                    "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                  }
+                },
+                "protocol": null,
+                "remote_group_id": null,
+                "remote_ip_prefix": null,
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {},
+                "id": "9ee5ccd7-a9b6-4275-ae7f-e9ee5dc6bc7c",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {}
+                },
+                "protocol": "icmp",
+                "remote_group_id": null,
+                "remote_ip_prefix": "0.0.0.0/0",
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              }
+            ],
+            "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+          }],
+          "status": "ACTIVE",
+          "task_state": null,
+          "tenant_id": "9b030642734c43b69cc85983164b3e2f",
+          "terminated_at": null,
+          "updated": "2018-12-18T08:28:54Z",
+          "user_id": "03cfeddb4df84788981ed71bf0e7180b",
+          "vm_state": "active",
+          "volumes": []
+        }],
+        "servers": [{
+          "OS-DCF:diskConfig": "MANUAL",
+          "OS-EXT-AZ:availability_zone": "nova",
+          "OS-EXT-STS:power_state": 1,
+          "OS-EXT-STS:task_state": null,
+          "OS-EXT-STS:vm_state": "active",
+          "OS-SRV-USG:launched_at": "2018-12-18T08:28:54.000000",
+          "OS-SRV-USG:terminated_at": null,
+          "accessIPv4": "10.0.58.5",
+          "accessIPv6": "",
+          "addresses": {
+            "provider_net_ccit": [{
+              "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7c:9f:17",
+              "OS-EXT-IPS:type": "fixed",
+              "addr": "10.0.58.5",
+              "version": 4
+            }]
+          },
+          "adminPass": "RrsALqRg6yoY",
+          "az": "nova",
+          "cloud": "envvars",
+          "config_drive": "",
+          "created": "2018-12-18T08:28:34Z",
+          "created_at": "2018-12-18T08:28:34Z",
+          "disk_config": "MANUAL",
+          "flavor": {
+            "id": "BC7DCC3C-D728-455F-BF2B-5D61AB8E9A06",
+            "name": "m1.small"
+          },
+          "has_config_drive": false,
+          "hostId": "22763e86128f44a80b9dd80f5d6129b1c791332df7d965db3fd0e2b4",
+          "host_id": "22763e86128f44a80b9dd80f5d6129b1c791332df7d965db3fd0e2b4",
+          "id": "06d2cfed-5ca3-4ac9-9926-5f32bdbb34c7",
+          "image": {
+            "id": "d7b7b9b8-751b-4b28-9bc7-3436db1fd3a8",
+            "name": "rhel-7.5-server-x86_64-released"
+          },
+          "interface_ip": "10.0.58.5",
+          "key_name": "ccit",
+          "launched_at": "2018-12-18T08:28:54.000000",
+          "location": {
+            "cloud": "envvars",
+            "project": {
+              "domain_id": null,
+              "domain_name": null,
+              "id": "9b030642734c43b69cc85983164b3e2f",
+              "name": "CCIT"
+            },
+            "region_name": "",
+            "zone": "nova"
+          },
+          "metadata": {},
+          "name": "openstack-node1",
+          "networks": {},
+          "os-extended-volumes:volumes_attached": [],
+          "power_state": 1,
+          "private_v4": "",
+          "progress": 0,
+          "project_id": "9b030642734c43b69cc85983164b3e2f",
+          "properties": {
+            "OS-DCF:diskConfig": "MANUAL",
+            "OS-EXT-AZ:availability_zone": "nova",
+            "OS-EXT-STS:power_state": 1,
+            "OS-EXT-STS:task_state": null,
+            "OS-EXT-STS:vm_state": "active",
+            "OS-SRV-USG:launched_at": "2018-12-18T08:28:54.000000",
+            "OS-SRV-USG:terminated_at": null,
+            "os-extended-volumes:volumes_attached": []
+          },
+          "public_v4": "10.0.58.5",
+          "public_v6": "",
+          "region": "",
+          "security_groups": [{
+            "description": "Default security group",
+            "id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+            "location": {
+              "cloud": "envvars",
+              "project": {
+                "domain_id": null,
+                "domain_name": null,
+                "id": "9b030642734c43b69cc85983164b3e2f",
+                "name": "CCIT"
+              },
+              "region_name": "",
+              "zone": null
+            },
+            "name": "default",
+            "project_id": "9b030642734c43b69cc85983164b3e2f",
+            "properties": {},
+            "security_group_rules": [{
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {},
+                "id": "24c2d4c3-2d09-4517-8175-d8c6130f62c7",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": 22,
+                "port_range_min": 22,
+                "project_id": "",
+                "properties": {
+                  "group": {}
+                },
+                "protocol": "tcp",
+                "remote_group_id": null,
+                "remote_ip_prefix": "0.0.0.0/0",
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {
+                  "name": "default",
+                  "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                },
+                "id": "368b13fd-9879-4226-9dcd-6339d59cd90d",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {
+                    "name": "default",
+                    "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                  }
+                },
+                "protocol": null,
+                "remote_group_id": null,
+                "remote_ip_prefix": null,
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {
+                  "name": "default",
+                  "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                },
+                "id": "96a96ca0-eed9-4548-a2b4-25bc61d589db",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {
+                    "name": "default",
+                    "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+                  }
+                },
+                "protocol": null,
+                "remote_group_id": null,
+                "remote_ip_prefix": null,
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              },
+              {
+                "direction": "ingress",
+                "ethertype": "IPv4",
+                "group": {},
+                "id": "9ee5ccd7-a9b6-4275-ae7f-e9ee5dc6bc7c",
+                "location": {
+                  "cloud": "envvars",
+                  "project": {
+                    "domain_id": null,
+                    "domain_name": null,
+                    "id": "9b030642734c43b69cc85983164b3e2f",
+                    "name": "CCIT"
+                  },
+                  "region_name": "",
+                  "zone": null
+                },
+                "port_range_max": null,
+                "port_range_min": null,
+                "project_id": "",
+                "properties": {
+                  "group": {}
+                },
+                "protocol": "icmp",
+                "remote_group_id": null,
+                "remote_ip_prefix": "0.0.0.0/0",
+                "security_group_id": "f9d314e4-beab-4e8c-974b-a900485e0699",
+                "tenant_id": ""
+              }
+            ],
+            "tenant_id": "9b030642734c43b69cc85983164b3e2f"
+          }],
+          "status": "ACTIVE",
+          "task_state": null,
+          "tenant_id": "9b030642734c43b69cc85983164b3e2f",
+          "terminated_at": null,
+          "updated": "2018-12-18T08:28:54Z",
+          "user_id": "03cfeddb4df84788981ed71bf0e7180b",
+          "vm_state": "active",
+          "volumes": []
+        }]
+      }]
+    }
+  }
+}

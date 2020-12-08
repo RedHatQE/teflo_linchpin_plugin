@@ -1,0 +1,125 @@
+{
+  "teflo": {
+    "inputs": {
+      "topology_data": {
+        "topology_name": "cbn-topo",
+        "resource_groups": [
+          {
+            "resource_group_name": "cbn-group",
+            "resource_definitions": [
+              {
+                "count": 2,
+                "name": "db2_dummy",
+                "region": "us-east-2",
+                "role": "aws_ec2",
+                "flavor": "t2.nano",
+                "image": "ami-0200c593f80612761"
+              }
+            ],
+            "resource_group_type": "aws"
+          }
+        ]
+      }
+    },
+    "outputs": {
+      "inventory_path": [
+        "/home/dbaez/projects/teflo/linchpin_scenarios/.teflo/.results/inventory/master-161iffsptg"
+      ],
+      "resources": [
+        {
+          "resource_group": "aws",
+          "instances": [
+            {
+              "kernel": null,
+              "root_device_type": "ebs",
+              "private_dns_name": "ip-172-31-45-229.us-east-2.compute.internal",
+              "public_ip": "18.188.2.179",
+              "private_ip": "172.31.45.229",
+              "id": "i-027cf82f69a309542",
+              "ebs_optimized": false,
+              "state": "pending",
+              "virtualization_type": "hvm",
+              "root_device_name": "/dev/sda1",
+              "ramdisk": null,
+              "block_device_mapping": {
+                "/dev/sda1": {
+                  "status": "attaching",
+                  "delete_on_termination": false,
+                  "volume_id": "vol-04201ab558ee4d6e2"
+                }
+              },
+              "key_name": null,
+              "image_id": "ami-0200c593f80612761",
+              "tenancy": "default",
+              "groups": {
+                "sg-b34384d8": "default"
+              },
+              "public_dns_name": "ec2-18-188-2-179.us-east-2.compute.amazonaws.com",
+              "state_code": 0,
+              "tags": {
+                "resource_group_name": "cbn-group",
+                "name": "db2_dummy"
+              },
+              "placement": "us-east-2c",
+              "ami_launch_index": "0",
+              "dns_name": "ec2-18-188-2-179.us-east-2.compute.amazonaws.com",
+              "region": "us-east-2",
+              "launch_time": "2020-02-27T03:03:48.000Z",
+              "instance_type": "t2.nano",
+              "architecture": "x86_64",
+              "hypervisor": "xen"
+            },
+            {
+              "kernel": null,
+              "root_device_type": "ebs",
+              "private_dns_name": "ip-172-31-44-223.us-east-2.compute.internal",
+              "public_ip": "18.222.84.251",
+              "private_ip": "172.31.44.223",
+              "id": "i-093e3adef28eaa5ea",
+              "ebs_optimized": false,
+              "state": "pending",
+              "virtualization_type": "hvm",
+              "root_device_name": "/dev/sda1",
+              "ramdisk": null,
+              "block_device_mapping": {
+                "/dev/sda1": {
+                  "status": "attaching",
+                  "delete_on_termination": false,
+                  "volume_id": "vol-081cbeae276e7e2ef"
+                }
+              },
+              "key_name": null,
+              "image_id": "ami-0200c593f80612761",
+              "tenancy": "default",
+              "groups": {
+                "sg-b34384d8": "default"
+              },
+              "public_dns_name": "ec2-18-222-84-251.us-east-2.compute.amazonaws.com",
+              "state_code": 0,
+              "tags": {
+                "resource_group_name": "cbn-group",
+                "name": "db2_dummy"
+              },
+              "placement": "us-east-2c",
+              "ami_launch_index": "1",
+              "dns_name": "ec2-18-222-84-251.us-east-2.compute.amazonaws.com",
+              "region": "us-east-2",
+              "launch_time": "2020-02-27T03:03:48.000Z",
+              "instance_type": "t2.nano",
+              "architecture": "x86_64",
+              "hypervisor": "xen"
+            }
+          ],
+          "changed": true,
+          "instance_ids": [
+            "i-027cf82f69a309542",
+            "i-093e3adef28eaa5ea"
+          ],
+          "failed": false,
+          "role": "aws_ec2",
+          "tagged_instances": []
+        }
+      ]
+    }
+  }
+}

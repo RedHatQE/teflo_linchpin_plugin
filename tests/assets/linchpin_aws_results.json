@@ -1,0 +1,116 @@
+  { "teflo": {
+    "action": "up",
+    "cfgs": [],
+    "end": "1565206675.52",
+    "hooks": [],
+    "inputs": [
+      {
+        "topology_data": {
+          "resource_groups": [
+            {
+              "resource_definitions": [
+                {
+                  "count": 1,
+                  "flavor": "t2.nano",
+                  "image": "ami-0200c593f80612761",
+                  "keypair": "db2_aws_key_pair",
+                  "name": "ci_test_client_a",
+                  "region": "us-east-2",
+                  "role": "aws_ec2"
+                }
+              ],
+              "resource_group_name": "teflo",
+              "resource_group_type": "aws"
+            }
+          ],
+          "topology_name": "teflo"
+        }
+      },
+      {
+        "layout_data": {
+          "inventory_layout": {
+            "hosts": [
+              {
+                "count": 1,
+                "host_groups": [
+                  "hosts",
+                  "client",
+                  "test_driver"
+                ],
+                "name": "node"
+              }
+            ],
+            "vars": {
+              "ansible_ssh_private_key_file": "/tmp/db2_aws_key_pair.pem",
+              "ansible_user": "centos",
+              "hostname": "ci_test_client_a"
+            }
+          }
+        }
+      }
+    ],
+    "outputs":
+      {
+        "resources": [
+          {
+            "changed": true,
+            "failed": false,
+            "instance_ids": [
+              "i-03b87b0bbfbf81b20"
+            ],
+            "instances": [
+              {
+                "ami_launch_index": "0",
+                "architecture": "x86_64",
+                "block_device_mapping": {
+                  "/dev/sda1": {
+                    "delete_on_termination": false,
+                    "status": "attached",
+                    "volume_id": "vol-0da005cb65655a084"
+                  }
+                },
+                "dns_name": "ec2-18-222-138-53.us-east-2.compute.amazonaws.com",
+                "ebs_optimized": false,
+                "groups": {
+                  "sg-b34384d8": "default"
+                },
+                "hypervisor": "xen",
+                "id": "i-03b87b0bbfbf81b20",
+                "image_id": "ami-0200c593f80612761",
+                "instance_type": "t2.nano",
+                "kernel": null,
+                "key_name": "db2_aws_key_pair",
+                "launch_time": "2019-08-07T19:37:31.000Z",
+                "placement": "us-east-2c",
+                "private_dns_name": "ip-172-31-46-143.us-east-2.compute.internal",
+                "private_ip": null,
+                "public_dns_name": "ec2-18-222-138-53.us-east-2.compute.amazonaws.com",
+                "public_ip": "10.0.58.5",
+                "ramdisk": null,
+                "region": "us-east-2",
+                "root_device_name": "/dev/sda1",
+                "root_device_type": "ebs",
+                "state": "running",
+                "state_code": 16,
+                "tags": {
+                  "name": "ci_test_client_a",
+                  "resource_group_name": "teflo"
+                },
+                "tenancy": "default",
+                "virtualization_type": "hvm"
+              }
+            ],
+            "resource_type": "aws_ec2_res",
+            "tagged_instances": []
+          }
+        ],
+        "inventory_path": [
+          "/home/dbaez/projects/teflo/e2e-acceptance-tests/.teflo/.results/linchpin/inventories/teflo.inventory"
+        ]
+      }
+    ,
+    "rc": 0,
+    "start": "1565206648.49",
+    "uhash": "22eaf1"
+  }
+}

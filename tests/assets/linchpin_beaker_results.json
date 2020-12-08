@@ -1,0 +1,70 @@
+{
+  "teflo":{
+      "inputs": {
+            "topology_data":{
+                "topology_name":"teflo",
+                "resource_groups":[
+                  {
+                      "resource_group_name":"teflo",
+                      "resource_definitions":[
+                        {
+                            "role":"bkr_server",
+                            "recipesets":[
+                              {
+                                  "arch":"x86_64",
+                                  "variant":"Server",
+                                  "name":"beaker",
+                                  "distro":"RHEL-7.5"
+                              }
+                            ]
+                        }
+                      ],
+                      "resource_group_type":"beaker"
+                  }
+                ]
+            },
+            "layout_data":{
+                "inventory_layout":{
+                  "hosts":[
+                      {
+                        "count":1,
+                        "name":"node",
+                        "host_groups":[
+                            "teflo"
+                        ]
+                      }
+                  ],
+                  "vars":{
+                      "hostname":"__IP__",
+                      "ansible_user":"cloud-user"
+                  }
+                }
+          }
+       },
+      "outputs": {
+            "bkr_id_values":
+                {
+                  "url":"https://beaker.engineering.redhat.com/jobs/3240848",
+                  "id":"3240848"
+                },
+
+            "resources":[{
+                "status":"Running",
+                "name":"beaker",
+                "family":"RedHatEnterpriseLinux7",
+                "url":"https://beaker.engineering.redhat.com/jobs/3240848",
+                "resource_type": "beaker_res",
+                "variant":"Server",
+                "system":"10.0.58.5",
+                "result":"Pass",
+                "rid":"6313090",
+                "arch":"x86_64",
+                "id":"3240848",
+                "distro":"RHEL-7.5"
+            }],
+            "inventory_path":[
+                "/tmp/teflo_bkr_test/.teflo/.results/linchpin/inventories/teflo.inventory"
+            ]
+          }
+  }
+}

@@ -1,0 +1,79 @@
+{
+
+  "teflo": {
+
+    "inputs": {
+      "topology_data": {
+        "resource_groups": [{
+          "resource_definitions": [{
+            "job_group": "ci-ops-central",
+            "recipesets": [{
+              "arch": "x86_64",
+              "count": 2,
+              "distro": "RHEL-7.6",
+              "hostrequires": [{
+                "op": "=",
+                "tag": "pool",
+                "value": "ci-ops-central-qe"
+              }],
+              "name": "db2-teflo-beaker-node",
+              "ssh_key_file": [
+                "demo.pub"
+              ],
+              "variant": "Server"
+            }],
+            "role": "bkr_server",
+            "ssh_keys_path": "/home/rushinde/teflo_py2_work/e2e-acceptance-tests/keys",
+            "whiteboard": "0819_bkr_c"
+          }],
+          "resource_group_name": "teflo",
+          "resource_group_type": "beaker"
+        }],
+        "topology_name": "teflo"
+      }
+    },
+    "outputs": {
+      "bkr_id_values": {
+        "id": "3744293",
+        "url": "https://beaker.engineering.redhat.com/jobs/3744293"
+      },
+
+      "resources": [{
+        "arch": "x86_64",
+        "distro": "RHEL-7.6",
+        "family": "RedHatEnterpriseLinux7",
+        "id": "3744293",
+        "name": "db2-teflo-beaker-node",
+        "resource_type": "beaker_res",
+        "result": "Pass",
+        "rid": "7270239",
+        "status": "Running",
+        "role": "bkr_server",
+        "system": "10.0.151.56",
+        "url": "https://beaker.engineering.redhat.com/jobs/3744293",
+        "variant": "Server"
+      },
+        {
+          "arch": "x86_64",
+          "distro": "RHEL-7.6",
+          "family": "RedHatEnterpriseLinux7",
+          "id": "3744293",
+          "resource_type": "beaker_res",
+          "result": "Pass",
+          "rid": "7270240",
+          "status": "Running",
+          "role": "bkr_server",
+          "system": "10.0.150.117",
+          "url": "https://beaker.engineering.redhat.com/jobs/3744293",
+          "variant": "Server"
+        }
+      ],
+
+      "inventory_path": [
+        "/home/rushinde/teflo_py2_work/e2e-acceptance-tests/.teflo/.results/linchpin/inventories/teflo.inventory"
+      ]
+    }
+
+  }
+
+}

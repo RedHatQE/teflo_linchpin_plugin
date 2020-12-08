@@ -1,0 +1,12 @@
+---
+topology_name: "dummy_cluster" # topology name
+resource_groups:
+  - resource_group_name: "dummy"
+    resource_group_type: "dummy"
+    resource_definitions:
+      - name: "{{ distro | default('') }}web-topo"
+        role: "dummy_node"
+        count: 3
+      - name: "{{ distro | default('') }}test-topo"
+        role: "dummy_node"
+        count: 1
