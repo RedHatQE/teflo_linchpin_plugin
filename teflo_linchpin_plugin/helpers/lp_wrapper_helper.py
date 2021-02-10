@@ -165,7 +165,7 @@ class LinchpinPinfileBuilder(object):
     @classmethod
     def _build_resource_group_from_asset(cls, asset, pindict):
         resource_grp = {key: val for key, val in asset.profile().items() if key not in
-                        set(getattr(asset, '_fields') + ['tx_id'])}
+                        set(getattr(asset, '_fields') + ['tx_id', 'job_url'])}
         return cls._build_pinfile(asset_name=getattr(asset, 'name'),
                                   workspace=getattr(asset, 'workspace'),
                                   resource_grp=resource_grp,
