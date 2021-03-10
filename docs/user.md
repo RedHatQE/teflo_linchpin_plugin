@@ -1,5 +1,7 @@
 # User Guide
 
+### To return to documentation home page press [here](https://redhatqe.github.io/teflo_linchpin_plugin/docs/index.html)
+
 ## Installation
 
 ### Before Install
@@ -112,6 +114,7 @@ information export the appropriate Ansible credential environmental variables fo
 Below are the provider specific options that can be specified in the `teflo.cfg` 
 
 #### OpenStack
+
 |key| Description | Required|
 |  ---  |   ----  | ---  |
 |auth_url|The authentication URL of your OpenStack tenant. (identity)| True|
@@ -123,6 +126,7 @@ Below are the provider specific options that can be specified in the `teflo.cfg`
 
 
 #### Beaker
+
 |key| Description | Required|
 |  ---  |   ----  | ---  |
 |hub_url|The beaker server url.| True|
@@ -137,6 +141,7 @@ Below are the provider specific options that can be specified in the `teflo.cfg`
 
 
 #### AWS
+
 |key| Description | Required|
 |  ---  |   ----  | ---  |
 |aws_access_key_id|The access key id that should be used to authenticate.|True|
@@ -661,5 +666,5 @@ We believe there is room for both operations. A benefit are Linchpin's `preup` a
 since Teflo does not have similar functionality. Where we suggest users should start to consider moving
 away from Linchpin hooks is if any `postup` hooks have been configured. That is where thos scripts/playbooks
 can be moved over and configured in Teflo's 
-[Orchestrate](https://docs.engineering.redhat.com/display/CentralCI/Orchestrate) section. It can help 
+[Orchestrate](https://teflo.readthedocs.io/en/latest/users/definitions/orchestrate.html) section. It can help 
 structure and organize this activity better.
