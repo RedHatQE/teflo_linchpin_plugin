@@ -1,4 +1,6 @@
-# Linchpin PLugin Development Guide
+# Linchpin Plugin Development Guide
+
+### To return to documentation home page press [here](https://redhatqe.github.io/teflo_linchpin_plugin/docs/index.html)
 
 The plugin team welcomes your contributions to the project. 
 Please use this document as a guide to working on proposed changes to Linchpin Plugin. 
